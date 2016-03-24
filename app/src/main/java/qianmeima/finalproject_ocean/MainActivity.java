@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         valueEditText = (EditText) findViewById(R.id.edit_text_value);
 
         Firebase.setAndroidContext(this);
-        rootRef = new Firebase("https://finalproject-ocean.firebaseio.com/");
+        rootRef = new Firebase("https://useraccount-yijunl.firebaseio.com/");
         authStateListener = new Firebase.AuthStateListener() {
             @Override
             public void onAuthStateChanged(AuthData authData) {
@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
         if (userRef != null)
             userRef.child(keyEditText.getText().toString()).setValue(valueEditText.getText().toString());
     }
-
     public void readFromCloud(View view) {
         if (userRef == null) return;
         userRef.child(keyEditText.getText().toString()).addValueEventListener(new ValueEventListener() {
@@ -63,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "key not found:" + keyEditText.getText(), Toast.LENGTH_SHORT).show();
                 }
             }
-
             @Override
             public void onCancelled(FirebaseError error) {
                 Toast.makeText(MainActivity.this, "Error:" + error.toString(), Toast.LENGTH_SHORT).show();
@@ -71,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
 
         });
     }
-
     @Override
     protected void onResume() {
         super.onResume();

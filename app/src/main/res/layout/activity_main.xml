@@ -29,18 +29,17 @@
         android:id="@+id/edit_text_value"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_gravity="top"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:layout_gravity="top" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Write to Cloud"
+        android:onClick="writeToCloud" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="writeToCloud"
-        android:text="Write to Cloud" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="readFromCloud"
-        android:text="Read from Cloud" />
+        android:text="Read from Cloud"
+        android:onClick="readFromCloud" />
 </LinearLayout>
