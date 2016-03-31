@@ -5,15 +5,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.firebase.client.AuthData;
-import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
-import com.firebase.client.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
     private Firebase rootRef;
@@ -46,29 +41,29 @@ public class MainActivity extends AppCompatActivity {
         };
     }
 
-    public void writeToCloud(View view) {
-        if (userRef != null)
-            userRef.child(keyEditText.getText().toString()).setValue(valueEditText.getText().toString());
-    }
-    public void readFromCloud(View view) {
-        if (userRef == null) return;
-        userRef.child(keyEditText.getText().toString()).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot snapshot) {
-                if (snapshot.getValue() != null) {
-                    valueEditText.setText(snapshot.getValue().toString());
-                } else {
-                    valueEditText.setText("");
-                    Toast.makeText(MainActivity.this, "key not found:" + keyEditText.getText(), Toast.LENGTH_SHORT).show();
-                }
-            }
-            @Override
-            public void onCancelled(FirebaseError error) {
-                Toast.makeText(MainActivity.this, "Error:" + error.toString(), Toast.LENGTH_SHORT).show();
-            }
-
-        });
-    }
+    //    public void writeToCloud(View view) {
+//        if (userRef != null)
+//            userRef.child(keyEditText.getText().toString()).setValue(valueEditText.getText().toString());
+//    }
+//    public void readFromCloud(View view) {
+//        if (userRef == null) return;
+//        userRef.child(keyEditText.getText().toString()).addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot snapshot) {
+//                if (snapshot.getValue() != null) {
+//                    valueEditText.setText(snapshot.getValue().toString());
+//                } else {
+//                    valueEditText.setText("");
+//                    Toast.makeText(MainActivity.this, "key not found:" + keyEditText.getText(), Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//            @Override
+//            public void onCancelled(FirebaseError error) {
+//                Toast.makeText(MainActivity.this, "Error:" + error.toString(), Toast.LENGTH_SHORT).show();
+//            }
+//
+//        });
+    //}
     @Override
     protected void onResume() {
         super.onResume();
