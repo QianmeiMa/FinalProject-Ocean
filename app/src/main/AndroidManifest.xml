@@ -21,10 +21,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".WrittingPage" />
-        <activity android:name=".ShareLayout" />
         <activity android:name=".Diary" />
         <activity android:name=".ReadingPage" />
-        <activity android:name=".LetterLayout"></activity>
     </application>
 
 </manifest>

@@ -61,7 +61,7 @@ public class LogInActivity extends AppCompatActivity {
 
             @Override
             public void onError(FirebaseError firebaseError) {
-                Toast.makeText(LogInActivity.this, "Tou unable to Sign Up: " + firebaseError.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(LogInActivity.this, "Unable to Sign Up: " + firebaseError.getMessage(), Toast.LENGTH_LONG).show();
 
             }
         });
