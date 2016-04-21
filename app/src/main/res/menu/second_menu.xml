@@ -9,7 +9,7 @@
 
     <item
         android:id="@+id/home"
-        android:icon="@drawable/home"
+        android:icon="@drawable/home2"
         android:title="Home"
         app:showAsAction="always" />
 

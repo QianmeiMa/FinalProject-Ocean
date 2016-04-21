@@ -9,5 +9,60 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="qianmeima.finalproject_ocean.Diary">
 
+    <ImageView
+        android:id="@+id/photo_writing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/writing" />
+
+    <EditText
+        android:id="@+id/diaryEditText_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Title"
+        android:inputType="textMultiLine"
+        android:layout_below="@+id/photo_writing"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:id="@+id/diaryEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Writing"
+        android:inputType="textMultiLine"
+        android:layout_below="@+id/diaryEditText_title"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/takephoto"
+        android:onClick="takePhoto"
+        android:id="@+id/takeP"
+        android:layout_marginRight="39dp"
+        android:layout_marginEnd="39dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/pickP"
+        android:layout_toStartOf="@+id/pickP" />
+
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:onClick="pickPhoto"
+        android:background="@drawable/pickphoto"
+        android:id="@+id/pickP"
+        android:layout_alignTop="@+id/takeP"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/image"
+        android:layout_weight="1"
+        android:scaleType="fitCenter" />
+
 
 </RelativeLayout>
