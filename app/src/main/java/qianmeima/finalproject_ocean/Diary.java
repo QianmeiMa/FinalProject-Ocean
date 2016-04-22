@@ -17,4 +17,13 @@ public class Diary {
         this.article = article;
 
     }
+
+    @Override
+    public boolean equals(Object object) {
+        if (!(object instanceof Diary))
+            return false;
+
+        Diary diary = (Diary) object;
+        return title.equals(diary.title);
+    }
 }

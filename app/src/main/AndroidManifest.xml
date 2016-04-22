@@ -23,6 +23,9 @@
         <activity
             android:name=".DiaryActivity"
             android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".DiaryView"
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>

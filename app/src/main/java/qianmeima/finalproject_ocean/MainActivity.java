@@ -64,35 +64,40 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void planButton(View view) {
-        Intent intent = new Intent(MainActivity.this, PlanActivity.class);
-        startActivity(intent);
-    }
+//    public void planButton(View view) {
+//        Intent intent = new Intent(MainActivity.this, PlanActivity.class);
+//        startActivity(intent);
+//    }
+
+//    public void secretButton(View view) {
+//        Intent intent = new Intent(MainActivity.this, SecretActivity.class);
+//        startActivity(intent);
+//    }
 
     public void secretButton(View view) {
         Intent intent = new Intent(MainActivity.this, SecretActivity.class);
         startActivity(intent);
     }
 
-    public void homeButton(View view) {
-        Intent intent = new Intent(MainActivity.this, MainActivity.class);
-        startActivity(intent);
-    }
+//    public void homeButton(View view) {
+//        Intent intent = new Intent(MainActivity.this, MainActivity.class);
+//        startActivity(intent);
+//    }
 
-    public void mailButton(View view) {
-        Intent intent = new Intent(MainActivity.this, MailActivity.class);
-        startActivity(intent);
-    }
-
-    public void findButton(View view) {
-        Intent intent = new Intent(MainActivity.this, FindActivity.class);
-        startActivity(intent);
-    }
-
-    public void friendButton(View view) {
-        Intent intent = new Intent(MainActivity.this, FriendActivity.class);
-        startActivity(intent);
-    }
+//    public void mailButton(View view) {
+//        Intent intent = new Intent(MainActivity.this, MailActivity.class);
+//        startActivity(intent);
+//    }
+//
+//    public void findButton(View view) {
+//        Intent intent = new Intent(MainActivity.this, FindActivity.class);
+//        startActivity(intent);
+//    }
+//
+//    public void friendButton(View view) {
+//        Intent intent = new Intent(MainActivity.this, FriendActivity.class);
+//        startActivity(intent);
+//    }
 
 }
 
