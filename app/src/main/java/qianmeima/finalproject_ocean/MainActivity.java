@@ -79,10 +79,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-//    public void homeButton(View view) {
-//        Intent intent = new Intent(MainActivity.this, MainActivity.class);
-//        startActivity(intent);
-//    }
 
 //    public void mailButton(View view) {
 //        Intent intent = new Intent(MainActivity.this, MailActivity.class);
