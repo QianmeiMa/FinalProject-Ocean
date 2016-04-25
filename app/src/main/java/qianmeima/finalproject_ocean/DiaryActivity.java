@@ -3,52 +3,48 @@ package qianmeima.finalproject_ocean;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
 
 /**
- * Created by Ailee on 2016/4/21.
+ * Created by Ailee on 2016/4/17.
  */
-public class PhotoView extends AppCompatActivity {
+public class DiaryActivity extends AppCompatActivity {
 
     private Firebase rootRef;
     private Firebase userRef;
-    private RecyclerView recyclerView;
-    private PhotoAdapter photoAdapter;
     private Firebase.AuthStateListener authStateListener;
-
+    private EditText titleEditText;
+    private EditText articleEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.photo_view);
+        setContentView(R.layout.activity_diary);
 
+        titleEditText = (EditText) findViewById(R.id.diaryEditText);
+        articleEditText = (EditText) findViewById(R.id.diaryEditText_title);
 
         Firebase.setAndroidContext(this);
         rootRef = new Firebase("https://finalproject-ocean.firebaseio.com/");
-
         authStateListener = new Firebase.AuthStateListener() {
             @Override
             public void onAuthStateChanged(AuthData authData) {
                 if (authData != null) {
                     userRef = rootRef.child("users/" + authData.getUid());
-                    photoAdapter = new PhotoAdapter(userRef.child("photos"), PhotoView.this);
-                    recyclerView.setAdapter(photoAdapter);
+
                 } else {
-                    Intent intent = new Intent(PhotoView.this, LogInActivity.class);
+                    Intent intent = new Intent(DiaryActivity.this, LogInActivity.class);
                     startActivity(intent);
                 }
             }
         };
 
-
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view_photo);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
 
@@ -67,9 +63,26 @@ public class PhotoView extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
-        getMenuInflater().inflate(R.menu.second_menu, menu);
+        getMenuInflater().inflate(R.menu.diary_menu, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.save_diary:
+                Diary diary = new Diary(titleEditText.getText().toString(), articleEditText.getText().toString());
+                userRef.child("diaries").push().setValue(diary);
+                Toast.makeText(this, "Congratulations! Your diary is saved.", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(DiaryActivity.this, DiaryView.class);
+                startActivity(intent);
+
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
 
     }
 }

@@ -9,108 +9,109 @@
     android:weightSum="1">
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="@drawable/homebg"
         android:layout_alignParentTop="true"
-        android:id="@+id/imageView" />
+        android:background="@drawable/homebg" />
 
 
 
     <Button
         android:id="@+id/diaryButton"
-        android:onClick="diaryButton"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:background="@drawable/star"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
         android:layout_marginLeft="54dp"
         android:layout_marginStart="54dp"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:background="@drawable/star"
+        android:onClick="diaryButton" />
 
 
 
     <Button
         android:id="@+id/photoButton"
-        android:onClick="photoButton"
+
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:background="@drawable/ins"
-        android:layout_marginRight="77dp"
-        android:layout_marginEnd="77dp"
-        android:layout_alignTop="@+id/diaryButton"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignTop="@+id/diaryButton"
+        android:layout_marginEnd="77dp"
+        android:layout_marginRight="77dp"
+        android:background="@drawable/ins"
+        android:onClick="photoButton" />
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Plan"
-        android:textSize="25sp"
         android:layout_above="@+id/planButton"
-        android:layout_alignTop="@+id/planButton"
         android:layout_alignBottom="@+id/planButton"
-        android:layout_alignRight="@+id/planButton"
         android:layout_alignEnd="@+id/planButton"
-        android:id="@+id/textView2" />
+        android:layout_alignRight="@+id/planButton"
+        android:layout_alignTop="@+id/planButton"
+        android:text="Plan"
+        android:textSize="25sp" />
 
     <Button
         android:id="@+id/planButton"
-        android:onClick="planButton"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:background="@drawable/clock"
-        android:layout_marginTop="42dp"
-        android:layout_below="@+id/diaryButton"
         android:layout_alignLeft="@+id/diaryButton"
-        android:layout_alignStart="@+id/diaryButton" />
+        android:layout_alignStart="@+id/diaryButton"
+        android:layout_below="@+id/diaryButton"
+        android:layout_marginTop="42dp"
+        android:background="@drawable/clock"
+        android:onClick="planButton" />
 
     <Button
         android:id="@+id/secretButton"
-        android:onClick="secretButton"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:background="@drawable/heart"
-        android:layout_alignTop="@+id/planButton"
         android:layout_alignLeft="@+id/photoButton"
-        android:layout_alignStart="@+id/photoButton" />
+        android:layout_alignStart="@+id/photoButton"
+        android:layout_alignTop="@+id/planButton"
+        android:background="@drawable/heart"
+        android:onClick="secretButton" />
 
 
 
     <Button
         android:id="@+id/mailButton"
-        android:onClick="mailButton"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:background="@drawable/mail2"
-        android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/textView2"
+        android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/textView2"
         android:layout_marginLeft="31dp"
-        android:layout_marginStart="31dp" />
+        android:layout_marginStart="31dp"
+        android:background="@drawable/mail2"
+        android:onClick="mailButton" />
 
     <Button
         android:id="@+id/findButton"
-        android:onClick="findButton"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:background="@drawable/find"
+        android:layout_alignEnd="@+id/secretButton"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/secretButton"
-        android:layout_alignEnd="@+id/secretButton"
+        android:layout_marginEnd="29dp"
         android:layout_marginRight="29dp"
-        android:layout_marginEnd="29dp" />
+        android:background="@drawable/find"
+        android:onClick="findButton" />
 
     <Button
         android:id="@+id/friendButton"
-        android:onClick="friendButton"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:background="@drawable/friend"
         android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/secretButton"
         android:layout_toRightOf="@+id/secretButton"
-        android:layout_toEndOf="@+id/secretButton" />
+        android:background="@drawable/friend"
+        android:onClick="friendButton" />
 
 
 </RelativeLayout>

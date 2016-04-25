@@ -4,7 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
@@ -21,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Firebase.setAndroidContext(this);
+
+
 //        Firebase myFirebaseRef = new Firebase("https://finalproject-ocean.firebaseio.com/");
 
 
@@ -60,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void photoButton(View view) {
 
-        Intent intent = new Intent(MainActivity.this, PhotoActivity.class);
+        Intent intent = new Intent(MainActivity.this, PhotoActivity2.class);
         startActivity(intent);
     }
 
@@ -69,13 +74,10 @@ public class MainActivity extends AppCompatActivity {
 //        startActivity(intent);
 //    }
 
-//    public void secretButton(View view) {
-//        Intent intent = new Intent(MainActivity.this, SecretActivity.class);
-//        startActivity(intent);
-//    }
+
 
     public void secretButton(View view) {
-        Intent intent = new Intent(MainActivity.this, SecretActivity.class);
+        Intent intent = new Intent(MainActivity.this, SecretActivity2.class);
         startActivity(intent);
     }
 
@@ -94,6 +96,21 @@ public class MainActivity extends AppCompatActivity {
 //        Intent intent = new Intent(MainActivity.this, FriendActivity.class);
 //        startActivity(intent);
 //    }
+@Override
+public boolean onCreateOptionsMenu(Menu menu) {
+    getMenuInflater().inflate(R.menu.main, menu);
+    return true;
+}
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        Intent intent = new Intent(MainActivity.this, LogInActivity.class);
+        startActivity(intent);
+        Toast.makeText(this, "You are logged out", Toast.LENGTH_SHORT).show();
+        return true;
+    }
+
 
 }
 

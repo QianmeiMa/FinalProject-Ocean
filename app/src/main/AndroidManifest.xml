@@ -17,14 +17,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LogInActivity">
-
-        </activity>
+        <activity android:name=".LogInActivity" />
         <activity
             android:name=".DiaryActivity"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".DiaryView"
+            android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".PhotoActivity2"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".PhotoView"
+            android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".SecretActivity2"
+            android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".SecretView"
             android:parentActivityName=".MainActivity" />
     </application>
 
